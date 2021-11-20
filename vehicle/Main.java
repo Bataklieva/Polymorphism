@@ -33,8 +33,7 @@ public class Main {
 
         }
 
-        System.out.println(car);
-        System.out.println(truck);
+        vehicles.values().forEach(System.out::println);
 
     }
 
@@ -55,7 +54,7 @@ public class Main {
     private static void readInput(Scanner sc) {
         String[] input = sc.nextLine().split("\\s+");
         type = input[0];
-        fuel = Integer.parseInt(input[1]);
+        fuel = Double.parseDouble(input[1]);
         litres = Double.parseDouble(input[2]);
     }
 }

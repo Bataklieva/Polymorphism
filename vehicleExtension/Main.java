@@ -17,6 +17,7 @@ public class Main {
         readInput(sc); //for car
         vehicles.put("Car", new Car(fuel, litres, capacity));
 
+
         readInput(sc); //for truck
         vehicles.put("Truck", new Truck(fuel, litres, capacity));
 
@@ -27,14 +28,14 @@ public class Main {
         while (n-- > 0) {
             try {
 
-            String[] readCommands = sc.nextLine().split("\\s+");
-            String command = readCommands[0];
-            String vehicleType = readCommands[1];
-            double distanceOrLitres = Double.parseDouble(readCommands[2]);
+                String[] readCommands = sc.nextLine().split("\\s+");
+                String command = readCommands[0];
+                String vehicleType = readCommands[1];
+                double distanceOrLitres = Double.parseDouble(readCommands[2]);
 
-            resultFromCommand(vehicles, command, vehicleType, distanceOrLitres);
+                resultFromCommand(vehicles, command, vehicleType, distanceOrLitres);
 
-        } catch (IllegalArgumentException e) {
+            } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
 
@@ -64,9 +65,6 @@ public class Main {
             case "Refuel":
                 vehicle.get(vehicleType).refueling(distanceOrLitres);
                 break;
-
-            default:
-                throw new IllegalArgumentException("Not a proper command");
         }
     }
 

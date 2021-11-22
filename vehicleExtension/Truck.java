@@ -15,6 +15,8 @@ public class Truck extends VehicleAbstract {
 
     @Override
     public void refueling(double litres) {
-        this.setFuelQuantity(getFuelQuantity() + (litres * REFUELING_PROBLEM));
+        super.refueling(litres * REFUELING_PROBLEM);
+
     }
+
 }
